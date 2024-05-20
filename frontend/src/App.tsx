@@ -4,7 +4,7 @@ import Layout from './Layouts/layout';
 import Error from './components/Error';
 import Register from './pages/Register';
 const router = createBrowserRouter([
-  { path: '/', element: <Layout>{<span>Children</span>}</Layout> },
+  { path: '/', element: <Layout>{<span>Home Page</span>}</Layout> },
   { path: '/search', element: <Layout>{<div>Search page</div>}</Layout> },
   {
     path: '/register',
