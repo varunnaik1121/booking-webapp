@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
-
+import SignOutButton from './SignOutButton';
 const Header = () => {
   const { isLoggedIn } = useAppContext();
   return (
@@ -14,7 +14,7 @@ const Header = () => {
             <>
               <Link to={'/my-bookings'}>My Bookings</Link>
               <Link to={'/my-hotels'}>My Hotels</Link>
-              <button>Sign out</button>
+              <SignOutButton />
             </>
           ) : (
             <Link
