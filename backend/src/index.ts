@@ -28,7 +28,7 @@ app.get("/api/test",async(req:Request,res:Response)=>{
 app.listen(7000,()=>{
     console.log("server running on localhost:7000");
     mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string).then(()=>{
-        console.log('connected to mongoose')
+        console.log(process.env.MONGODB_CONNECTION_STRING)
     }).catch((err)=>console.log(err))
    
 })
