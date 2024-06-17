@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import SignIn from './pages/SignIn';
 import { useAppContext } from './context/AppContext';
 import AddHotel from './pages/AddHotel';
+import MyHotels from './pages/MyHotels';
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -38,6 +39,16 @@ function App() {
       element: isLoggedIn ? (
         <Layout>
           <AddHotel />
+        </Layout>
+      ) : (
+        <Navigate to={'/'}></Navigate>
+      ),
+    },
+    {
+      path: '/my-hotels',
+      element: isLoggedIn ? (
+        <Layout>
+          <MyHotels />
         </Layout>
       ) : (
         <Navigate to={'/'}></Navigate>
