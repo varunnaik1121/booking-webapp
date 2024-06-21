@@ -12,12 +12,13 @@ import SignIn from './pages/SignIn';
 import { useAppContext } from './context/AppContext';
 import AddHotel from './pages/AddHotel';
 import MyHotels from './pages/MyHotels';
-
+import EditHotel from './pages/EditHotel';
+import Search from './pages/Search';
 function App() {
   const { isLoggedIn } = useAppContext();
   const router = createBrowserRouter([
     { path: '/', element: <Layout>{<span>Home Page</span>}</Layout> },
-    { path: '/search', element: <Layout>{<div>Search page</div>}</Layout> },
+    { path: '/search', element: <Layout>{<Search></Search>}</Layout> },
     {
       path: '/register',
       element: (
@@ -49,6 +50,16 @@ function App() {
       element: isLoggedIn ? (
         <Layout>
           <MyHotels />
+        </Layout>
+      ) : (
+        <Navigate to={'/'}></Navigate>
+      ),
+    },
+    {
+      path: '/edit-hotel/:hotelId',
+      element: isLoggedIn ? (
+        <Layout>
+          <EditHotel />
         </Layout>
       ) : (
         <Navigate to={'/'}></Navigate>
